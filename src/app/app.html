@@ -1,0 +1,15 @@
+@if(imgs(); as imgs) {
+@for(photo of imgs ; track photo.url; let first = $first;) {
+<div class="gallery-item">
+  <img style="object-fit: 'contain'" [ngSrc]="photo.url" width="1280" height="1280" [priority]="first"/>
+</div>
+} @empty {
+<div>
+  No photos to show
+</div>
+}
+} @else {
+<div>
+  ...Loading
+</div>
+}
